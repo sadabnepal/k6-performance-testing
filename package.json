@@ -1,0 +1,17 @@
+{
+  "name": "apiperformancetestk6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "testGetCall": "k6 run tests/getCall.js",
+    "testPostCall": "k6 run tests/postCall.js",
+    "testPutCall": "k6 run tests/putCall.js",
+    "testPatchCall": "k6 run tests/patchCall.js",
+    "test": "npm run testGetCall&&npm run testPostCall&&npm run testPutCall&&npm run testPatchCall",
+    "testWithVirtualUsers": "k6 run --vus 10 --duration 10s tests/getCall.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
