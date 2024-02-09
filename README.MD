@@ -20,18 +20,13 @@
 
 ### Run Test commands
 ```
-npm run testGetCall
-npm run testPostCall
-npm run testPutCall
-npm run testPatchCall
+npm run testGet
+npm run testPost
+npm run testPut
+npm run testPatch
 npm run testWithVirtualUsers
 npm run test
 ```
 
 ### Sample Report:
-
-#### Overview:
 ![Overview Report](./samples/report_overview.png)
-
-#### Summary:
-![Summary](./samples/report_summary.png)

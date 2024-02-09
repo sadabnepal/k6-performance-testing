@@ -4,12 +4,12 @@
   "description": "API performance testing using k6 with live dashboard",
   "main": "index.js",
   "scripts": {
-    "testGetCall": "K6_WEB_DASHBOARD=true k6 run tests/getCall.js",
-    "testPostCall": "K6_WEB_DASHBOARD=true k6 run tests/postCall.js",
-    "testPutCall": "K6_WEB_DASHBOARD=true k6 run tests/putCall.js",
-    "testPatchCall": "K6_WEB_DASHBOARD=true k6 run tests/patchCall.js",
-    "test": "npm run testGetCall&&npm run testPostCall&&npm run testPutCall&&npm run testPatchCall",
-    "testWithVirtualUsers": "K6_WEB_DASHBOARD=true k6 run --vus 10 --duration 100s tests/getCall.js"
+    "testGet": "K6_WEB_DASHBOARD=true K6_WEB_DASHBOARD_EXPORT=report.html k6 run tests/specs/get.js",
+    "testPost": "K6_WEB_DASHBOARD=true K6_WEB_DASHBOARD_EXPORT=report.html k6 run tests/specs/post.js",
+    "testPut": "K6_WEB_DASHBOARD=true K6_WEB_DASHBOARD_EXPORT=report.html k6 run tests/specs/put.js",
+    "testPatch": "K6_WEB_DASHBOARD=true K6_WEB_DASHBOARD_EXPORT=report.html k6 run tests/specs/patch.js",
+    "test": "npm run testGet&&npm run testPost&&npm run testPut&&npm run testPatch",
+    "testWithVirtualUsers": "K6_WEB_DASHBOARD=true K6_WEB_DASHBOARD_EXPORT=report.html k6 run --vus 10 --duration 40s tests/specs/get.js"
   },
   "keywords": [
     "k6",

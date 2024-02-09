@@ -1,7 +1,8 @@
 import http from 'k6/http';
 import { check, sleep } from 'k6';
+import { REQ_RES_USERS } from '../config/urls.js';
 
-const userByPageNumber = (pageNumber) => `https://reqres.in/api/users?page=${pageNumber}`
+const userByPageNumber = (pageNumber) => `${REQ_RES_USERS}?page=${pageNumber}`;
 
 export default function () {
   let response = http.get(userByPageNumber(2));
