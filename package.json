@@ -1,17 +1,21 @@
 {
-  "name": "apiperformancetestk6",
+  "name": "api-performance-test-k6",
   "version": "1.0.0",
-  "description": "",
+  "description": "API performance testing using k6 with live dashboard",
   "main": "index.js",
   "scripts": {
-    "testGetCall": "k6 run tests/getCall.js",
-    "testPostCall": "k6 run tests/postCall.js",
-    "testPutCall": "k6 run tests/putCall.js",
-    "testPatchCall": "k6 run tests/patchCall.js",
+    "testGetCall": "K6_WEB_DASHBOARD=true k6 run tests/getCall.js",
+    "testPostCall": "K6_WEB_DASHBOARD=true k6 run tests/postCall.js",
+    "testPutCall": "K6_WEB_DASHBOARD=true k6 run tests/putCall.js",
+    "testPatchCall": "K6_WEB_DASHBOARD=true k6 run tests/patchCall.js",
     "test": "npm run testGetCall&&npm run testPostCall&&npm run testPutCall&&npm run testPatchCall",
-    "testWithVirtualUsers": "k6 run --vus 10 --duration 10s tests/getCall.js"
+    "testWithVirtualUsers": "K6_WEB_DASHBOARD=true k6 run --vus 10 --duration 100s tests/getCall.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "k6",
+    "api",
+    "performance-testing"
+  ],
+  "author": "MD SADAB SAQIB",
   "license": "ISC"
 }
