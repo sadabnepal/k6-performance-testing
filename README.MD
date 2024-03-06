@@ -9,8 +9,8 @@
 
 ### Getting Started
 ```
-1. git clone https://github.com/sadabnepal/APIPerformanceTestingK6.git
-2. Navigate to APIPerformanceTestingK6
+git clone https://github.com/sadabnepal/k6-api-test.git
+cd k6-api-test
 ```
 
 ### Pre-requisite
