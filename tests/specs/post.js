@@ -9,12 +9,12 @@ export default function () {
         job: "tester"
     };
 
-    let response = http.post(REQ_RES_USERS, JSON.stringify(payload), {
+    const response = http.post(REQ_RES_USERS, JSON.stringify(payload), {
         headers: {
             "Content-Type": "application/json"
         }
     });
 
-    check(response, {'is name matches': (res) => res.json().name === payload.name});
-    check(response, {'is job matches': (res) => res.json().job === payload.job});
+    check(response, { 'is name matches': (res) => res.json().name === payload.name });
+    check(response, { 'is job matches': (res) => res.json().job === payload.job });
 }

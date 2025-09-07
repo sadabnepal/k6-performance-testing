@@ -4,6 +4,10 @@
   "description": "API performance testing using k6 with live dashboard",
   "main": "index.js",
   "scripts": {
+    "setup:unix": "scripts/setup/macLinux.sh",
+    "setup:windows": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command scripts/setup/windows.ps1",
+    "run:experiment": "K6_WEB_DASHBOARD=true K6_WEB_DASHBOARD_EXPORT=report.html k6 run experiment/test_scripts.js",
+    "test:ts": "K6_WEB_DASHBOARD=true K6_WEB_DASHBOARD_EXPORT=report.html k6 run  tests/specs/basic.spec.ts",
     "testGet": "K6_WEB_DASHBOARD=true K6_WEB_DASHBOARD_EXPORT=report.html k6 run tests/specs/get.js",
     "testPost": "K6_WEB_DASHBOARD=true K6_WEB_DASHBOARD_EXPORT=report.html k6 run tests/specs/post.js",
     "testPut": "K6_WEB_DASHBOARD=true K6_WEB_DASHBOARD_EXPORT=report.html k6 run tests/specs/put.js",
@@ -17,5 +21,8 @@
     "performance-testing"
   ],
   "author": "MD SADAB SAQIB",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/k6": "^1.2.0"
+  }
 }

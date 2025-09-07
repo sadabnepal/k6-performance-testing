@@ -5,16 +5,16 @@ import { REQ_RES_USERS } from '../config/urls.js';
 const userByPageNumber = (pageNumber) => `${REQ_RES_USERS}/${pageNumber}`;
 
 export default function () {
-    
+
     const payload = {
         name: "saqib"
     };
 
-    let response = http.put(userByPageNumber(2), JSON.stringify(payload), {
+    const response = http.put(userByPageNumber(2), JSON.stringify(payload), {
         headers: {
             "Content-Type": "application/json"
         }
     });
 
-    check(response, {'is username matches': (res) => res.json().name === payload.name});
+    check(response, { 'is username matches': (res) => res.json().name === payload.name });
 }

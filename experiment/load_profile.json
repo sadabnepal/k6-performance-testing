@@ -1,0 +1,58 @@
+{
+    "steps": [
+        {
+            "name": "getPosts",
+            "location": "us-west-2",
+            "endpoint": {
+                "url": "https://jsonplaceholder.typicode.com/posts",
+                "method": "GET",
+                "params": {},
+                "headers": {},
+                "expectedStatusCodes": [
+                    200
+                ]
+            },
+            "vus": 1,
+            "iterations": 10,
+            "expectedResponseTime": 50
+        },
+        {
+            "name": "createPost",
+            "location": "eu-central-1",
+            "endpoint": {
+                "url": "https://jsonplaceholder.typicode.com/posts",
+                "method": "POST",
+                "params": {
+                    "title": "foo",
+                    "body": "bar",
+                    "userId": 1
+                },
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+                "expectedStatusCodes": [
+                    201
+                ]
+            },
+            "vus": 5,
+            "iterations": 10,
+            "expectedResponseTime": 300
+        },
+        {
+            "name": "getComments",
+            "location": "eu-central-1",
+            "endpoint": {
+                "url": "https://jsonplaceholder.typicode.com/comments",
+                "method": "GET",
+                "params": {},
+                "headers": {},
+                "expectedStatusCodes": [
+                    200
+                ]
+            },
+            "vus": 1,
+            "iterations": 30,
+            "expectedResponseTime": 500
+        }
+    ]
+}

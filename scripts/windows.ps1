@@ -1,0 +1,1 @@
+winget install k6 --source winget
